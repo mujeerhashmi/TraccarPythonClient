@@ -34,6 +34,7 @@ class User(object):
         'id': 'int',
         'name': 'str',
         'email': 'str',
+        'phone': 'str',
         'readonly': 'bool',
         'administrator': 'bool',
         'map': 'str',
@@ -58,6 +59,7 @@ class User(object):
         'id': 'id',
         'name': 'name',
         'email': 'email',
+        'phone': 'phone',
         'readonly': 'readonly',
         'administrator': 'administrator',
         'map': 'map',
@@ -78,12 +80,13 @@ class User(object):
         'attributes': 'attributes'
     }
 
-    def __init__(self, id=None, name=None, email=None, readonly=None, administrator=None, map=None, latitude=None, longitude=None, zoom=None, password=None, twelve_hour_format=None, coordinate_format=None, disabled=None, expiration_time=None, device_limit=None, user_limit=None, device_readonly=None, limit_commands=None, poi_layer=None, token=None, attributes=None):  # noqa: E501
+    def __init__(self, id=None, name=None, email=None, phone=None, readonly=None, administrator=None, map=None, latitude=None, longitude=None, zoom=None, password=None, twelve_hour_format=None, coordinate_format=None, disabled=None, expiration_time=None, device_limit=None, user_limit=None, device_readonly=None, limit_commands=None, poi_layer=None, token=None, attributes=None):  # noqa: E501
         """User - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._email = None
+        self._phone = None
         self._readonly = None
         self._administrator = None
         self._map = None
@@ -110,6 +113,8 @@ class User(object):
             self.name = name
         if email is not None:
             self.email = email
+        if phone is not None:
+            self.phone = phone
         if readonly is not None:
             self.readonly = readonly
         if administrator is not None:
@@ -209,6 +214,27 @@ class User(object):
         """
 
         self._email = email
+
+    @property
+    def phone(self):
+        """Gets the phone of this User.  # noqa: E501
+
+
+        :return: The phone of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._phone
+
+    @phone.setter
+    def phone(self, phone):
+        """Sets the phone of this User.
+
+
+        :param phone: The phone of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._phone = phone
 
     @property
     def readonly(self):
